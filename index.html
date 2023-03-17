@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+
+    <!--AXIOS fro GITHUB, which makes it possible to make a request to an API via AJAX-->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <!--End AXIOS-->
+
+    <!--Add bootstrap in the head-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!--Add bootstrap in the head-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--Must add div with class 'container' for bootstrap to work-->
+    <div class="container">
+      <!--weather app-->
+      <div class="weatherapp">
+        <div class="card">
+          <div class="card-body">
+            <!--search bar-->
+            <form id="city-form">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Choose your country"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                id="city-text-input"
+                autocomplete="off"
+              />
+
+              <input
+                class="btn btn-outline-secondary"
+                type="submit"
+                value="Search"
+                id="button-addon2"
+              />
+
+              <input
+                class="btn btn-outline-secondary"
+                type="submit"
+                value="Get Current Weather"
+                id="button-currentWeather"
+              />
+            </form>
+
+            <!--end search bar-->
+
+            <div class="row">
+              <div class="col-6">
+                <p class="country" id="city">Jakarta</p>
+              </div>
+
+              <div class="col-6">
+                <p class="maintemp">
+                  <span id="temperature"> XX</span>
+                  <span style="font-weight: 200">°C</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <p class="country-info">
+                Humidity: <span id="humidity">XX</span>%
+              </p>
+              <p class="country-info">Wind: <span id="wind">XX</span>%</p>
+              <p class="country-info" id="date">Tuesday 16:00</p>
+            </div>
+            <br />
+
+            <div class="row">
+              <div class="col-2">
+                <p class="weather-icon"><i class="bi-cloud"></i></p>
+                <p></p>
+                <p class="day">Monday</p>
+                <p class="daytemp">90°F / 77°F</p>
+              </div>
+              <div class="col-2">
+                <p class="weather-icon">
+                  <i class="bi bi-cloud"></i>
+                </p>
+                <p></p>
+                <p class="day">Tuesday</p>
+                <p class="daytemp">87°F / 75°F</p>
+              </div>
+              <div class="col-2">
+                <p class="weather-icon"><i class="bi-cloud"></i></p>
+                <p></p>
+                <p class="day">Wednesday</p>
+                <p class="daytemp">86°F / 75°F</p>
+              </div>
+              <div class="col-2">
+                <p class="weather-icon"><i class="bi-cloud"></i></p>
+                <p></p>
+                <p class="day">Thursday</p>
+                <p class="daytemp">87°F / 77°F</p>
+              </div>
+              <div class="col-2">
+                <p class="weather-icon"><i class="bi-cloud"></i></p>
+                <p></p>
+                <p class="day">Friday</p>
+                <p class="daytemp">86°F / 76°F</p>
+              </div>
+              <div class="col-2">
+                <p class="weather-icon"><i class="bi-cloud"></i></p>
+                <p></p>
+                <p class="day">Saturday</p>
+                <p class="daytemp">50°F / 50°F</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Div for the container & weatherapp class-->
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+h1 {
+  color: blue;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.weatherapp {
+  margin-top: 30px;
+}
+
+p.day {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+p.daytemp {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+}
+
+p.country {
+  font-weight: 300;
+  font-size: 48px;
+}
+
+p.maintemp {
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+}
+
+.weather-icon {
+  font-size: 30px;
+  text-align: center;
+}
+
+img {
+  border-radius: 50px;
+}
+
+.country-info {
+  font-weight: 300;
+  font-size: 14px;
+}
