@@ -28,24 +28,29 @@ date.innerHTML = `${weekdays[day]} ${hours}:${minutes}`;
 //change city name
 
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  //let temperature = Math.round(response.data.main.temp);
-  //let temperatureElement = document.querySelector("#tempElement");
-  //temperatureElement.innerHTML = `Word ${temperature}`;
+  try {
+    console.log(response.data);
+    document.querySelector("#city").innerHTML = response.data.name;
+    document.querySelector("#temperature").innerHTML = Math.round(
+      response.data.main.temp
+    );
+    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+    document.querySelector("#wind").innerHTML = Math.round(
+      response.data.wind.speed
+    );
+    document
+      .querySelector("#icon")
+      .setAttribute(
+        "src",
+        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function search(event) {
   event.preventDefault();
-  //let cityElement = document.querySelector("#city");
-  //let cityInput = document.querySelector("#city-text-input");
-  //cityElement.innerHTML = cityInput.value;
   let apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
   let city = document.querySelector("#city-text-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
