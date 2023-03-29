@@ -51,29 +51,30 @@ function displayWeatherCondition(response) {
   }
 }
 
-function search(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
-  let city = document.querySelector("#city-text-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-let inputCity = document.querySelector("#city-form");
-inputCity.addEventListener("submit", search);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-// change temperature
+function displayFahrenheitTemperture(event) {
+  event.preventDefault();
+  //alert("Link Clicked");
+  let fahrenheitTemperture = (14 * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperture);
+}
 
-//function showPosition(position) {
-//console.log(position.coords.latitude);
-//console.log(position.coords.longitude);
-//let lat = position.coords.latitude;
-//let lon = position.coords.longitude;
-//let units = "metric";
-//let apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
-//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-//console.log(apiUrl);
-//axios.get(apiUrl).then(dispayWeatherCondition);
-//}
+search("New Orleans");
 
-//navigator.geolocation.getCurrentPosition(showPosition);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperture);

@@ -53,22 +53,26 @@
         <div class="card">
           <div class="card-body">
             <!--start search bar-->
-            <form id="city-form">
+            <form id="search-form">
+              <div class="row">
+                <div class="col-9">
               <input
-                type="text"
+                type="search"
                 class="form-control"
                 placeholder="Choose your country"
-                id="city-text-input"
+                id="city-input"
                 autocomplete="off"
               />
-
+              </div>
+<div class="col-3">
               <input
-                class="btn btn-outline-secondary"
+                class="btn btn-primary"
                 type="submit"
                 value="Search"
                 id="button-addon2"
               />
-
+              </div>
+</div>
 
             </form>
 
@@ -83,7 +87,7 @@
                 <p>
                   <img id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" />
                   <span id="temperature" class="maintemp">100</span>
-                  <span class="tempunits"><a href="#">°C</a> | <a href="#">°F</a></span>
+                  <span class="tempunits"><a href="#">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
                 </p>
               </div>
             </div>
