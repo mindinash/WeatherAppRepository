@@ -98,3 +98,12 @@ img {
 .rightside {
   background: blue;
 }
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
