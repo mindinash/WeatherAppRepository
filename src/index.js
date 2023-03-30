@@ -46,6 +46,8 @@ function displayWeatherCondition(response) {
         "src",
         `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
+
+    celsiusTemperature = response.data.main.temp;
   } catch (error) {
     console.error(error);
   }
@@ -66,15 +68,17 @@ function handleSubmit(event) {
 function displayFahrenheitTemperture(event) {
   event.preventDefault();
   //alert("Link Clicked");
-  let fahrenheitTemperture = (14 * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperture = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperture);
 }
 
-search("New Orleans");
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperture);
+
+search("New Orleans");
