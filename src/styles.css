@@ -101,3 +101,8 @@ img {
 .weather-forecast.img {
   text-align: center;
 }
+
+.main-icon {
+  position: relative;
+  top: -15px;
+}
