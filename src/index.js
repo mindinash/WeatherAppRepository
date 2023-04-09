@@ -91,7 +91,7 @@ function getForecast(coordinates) {
 
 function displayWeatherCondition(response) {
   try {
-    console.log(response.data);
+    //console.log(response.data);
     document.querySelector("#description").innerHTML =
       response.data.weather[0].main;
     document.querySelector("#city").innerHTML = response.data.name;
